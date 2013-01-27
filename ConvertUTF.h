@@ -90,6 +90,8 @@
 #ifndef CLANG_BASIC_CONVERTUTF_H
 #define CLANG_BASIC_CONVERTUTF_H
 
+#include <libj/typedef.h>
+
 /* ---------------------------------------------------------------------
     The following 4 definitions are compiler-specific.
     The C standard does not guarantee that wchar_t has at least
@@ -98,10 +100,10 @@
     bit mask & shift operations.
 ------------------------------------------------------------------------ */
 
-typedef unsigned int    UTF32;  /* at least 32 bits */
-typedef unsigned short  UTF16;  /* at least 16 bits */
-typedef unsigned char   UTF8;   /* typically 8 bits */
-typedef unsigned char   Boolean; /* 0 or 1 */
+typedef char32_t      UTF32;   /* at least 32 bits */
+typedef char16_t      UTF16;   /* at least 16 bits */
+typedef unsigned char UTF8;    /* typically 8 bits */
+typedef bool          Boolean; /* 0 or 1 */
 
 /* Some fundamental constants */
 #define UNI_REPLACEMENT_CHAR (UTF32)0x0000FFFD
@@ -160,6 +162,8 @@ Boolean isLegalUTF8Sequence(const UTF8 *source, const UTF8 *sourceEnd);
 Boolean isLegalUTF8String(const UTF8 **source, const UTF8 *sourceEnd);
 
 unsigned getNumBytesForUTF8(UTF8 firstByte);
+
+Boolean isSurrogatePair(UTF16 highByte);
 
 #ifdef __cplusplus
 }

@@ -551,6 +551,12 @@ ConversionResult ConvertUTF8toUTF32 (
     return result;
 }
 
+/* --------------------------------------------------------------------- */
+
+Boolean isSurrogatePair(UTF16 highByte) {
+    return highByte >= UNI_SUR_HIGH_START && highByte <= UNI_SUR_HIGH_END;
+}
+
 /* ---------------------------------------------------------------------
 
     Note A.
