@@ -217,6 +217,9 @@ if (result == sourceIllegal) {
 #endif
     return result;
 }
+
+/* --------------------------------------------------------------------- */
+
 ConversionResult ConvertUTF16toUTF8 (
         const UTF16** sourceStart, const UTF16* sourceEnd, 
         UTF8** targetStart, UTF8* targetEnd, ConversionFlags flags) {
