@@ -161,7 +161,7 @@ Boolean isLegalUTF8String(const UTF8 **source, const UTF8 *sourceEnd);
 
 unsigned getNumBytesForUTF8(UTF8 firstByte);
 
-Boolean isSurrogatePair(UTF16 highByte);
+Boolean isSurrogatePair(UTF16 high);
 
 #ifdef __cplusplus
 }
