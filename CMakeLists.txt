@@ -9,7 +9,7 @@ add_library(convertutf STATIC
 )
 
 if(UNIX AND LIBJ_USE_CXX11)
-	set_target_properties(convertutf PROPERTIES
-   		COMPILE_FLAGS ${libj-deps-cflags}
-   	)
+    set_target_properties(convertutf PROPERTIES
+        COMPILE_FLAGS ${libj-deps-cflags}
+    )
 endif(UNIX AND LIBJ_USE_CXX11)
